@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=375, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta property="og:title" content="Юбилей Гаухар">
     <meta property="og:image" content="image.jpg">
@@ -11,162 +11,207 @@
     <meta name="description" content="Приглашение на юбилей Гаухар. Подтвердите участие.">
     <title>Юбилей Гаухар</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.2/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <style>
-        /* Устанавливаем размер для всего сайта, как для мобильного устройства */
-        body, html {
-            width: 375px; /* Ширина экрана мобильного устройства */
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden; /* Отключаем горизонтальный скроллинг */
-            height: 100%;
-        }
+       /* Сброс стилей */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        /* Фон для всего сайта */
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #00695c; /* Фоновый цвет по умолчанию для десктопа */
-            background-image: url('IMG_1324.JPG'); /* Укажите путь к вашему фоновому изображению */
-            background-size: cover;  /* Растягивает изображение на весь экран */
-            background-position: center; /* Центрирует изображение */
-            background-attachment: fixed; /* Сделает фон фиксированным при прокрутке */
-            color: white;
-            font-size: 16px;
-            display: block;
-        }
+body, html {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
 
-        /* Стили для контента */
-        .hero-section {
-            padding: 60px 20px;
-            text-align: center;
-            z-index: 2;
-        }
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #00695c;
+    background-image: url('IMG_1324.JPG');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+}
 
-        .hero-section h1 {
-            font-size: 2.5em;
-            font-weight: 500;
-            margin-bottom: 20px;
-        }
+/* Flexbox для центрирования */
+.container-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    flex-direction: column;
+}
 
-        .hero-section p {
-            font-size: 1.1em;
-            margin-bottom: 20px;
-        }
+/* Основной контейнер */
+.hero-section {
+    padding: 50px 15px;
+    max-width: 1200px; /* Добавлено максимальное ограничение ширины */
+    width: 100%;
+}
 
-        .countdown {
-            font-size: 24px;
-            font-weight: bold;
-            color: #ff7f50;
-            margin-bottom: 20px;
-        }
+.hero-section h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+}
 
-        .btn-custom {
-            background-color: #00695c;
-            color: white;
-            font-size: 16px;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-            margin-top: 20px;
-        }
+.hero-section p {
+    font-size: 1.1em;
+}
 
-        .btn-custom:hover {
-            background-color: #004d40;
-        }
+.countdown {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff7f50;
+}
 
-        footer {
-            background-color: #004d40;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
+.btn-custom {
+    background-color: #00695c;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
 
-        footer a {
-            color: #ff7f50;
-            text-decoration: none;
-        }
+.btn-custom:hover {
+    background-color: #004d40;
+}
 
-        footer a:hover {
-            text-decoration: underline;
-        }
+footer {
+    background-color: #004d40;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
 
-        .form-container {
-            margin-top: 40px;
-            background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный белый фон */
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+footer a {
+    color: #ff7f50;
+    text-decoration: none;
+}
 
-        .form-container h3 {
-            color: #00695c;
-            text-align: center;
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
+footer a:hover {
+    text-decoration: underline;
+}
 
-        .form-container input,
-        .form-container textarea {
-            margin-bottom: 15px;
-            width: 100%;
-            padding: 12px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-        }
+.form-container {
+    margin-top: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-        .form-container button {
-            width: 100%;
-            padding: 12px;
-            background-color: #00695c;
-            color: white;
-            border: none;
-            font-size: 18px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+.form-container h3 {
+    color: #00695c;
+    text-align: center;
+    margin-bottom: 20px;
+}
 
-        .form-container button:hover {
-            background-color: #004d40;
-        }
+.form-container input,
+.form-container textarea {
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
 
-        /* Мобильные настройки */
-        @media (max-width: 375px) {
-            body {
-                width: 100%; /* Убедитесь, что на мобильных устройствах растягивается на весь экран */
-                font-size: 14px;
-            }
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #00695c;
+    color: white;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
+.form-container button:hover {
+    background-color: #004d40;
+}
+
+/* Мобильные стили */
+@media screen and (max-width: 768px) {
+    .hero-section {
+        padding: 20px;
+    }
+
+    .hero-section h1 {
+        font-size: 1.8em;
+    }
+
+    .hero-section p {
+        font-size: 1em;
+    }
+
+    .countdown {
+        font-size: 20px;
+    }
+
+    .btn-custom {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    footer {
+        font-size: 14px;
+    }
+
+    .form-container {
+        margin-top: 20px;
+        padding: 15px;
+    }
+
+    .form-container button {
+        font-size: 16px;
+        padding: 15px;
+    }
+}
+
+/* Для очень маленьких экранов */
+@media screen and (max-width: 375px) {
+    .hero-section h1 {
+        font-size: 1.5em;
+    }
+
+    .hero-section p {
+        font-size: 0.9em;
+    }
+
+    .form-container {
+        padding: 10px;
+    }
+
+    .form-container button {
+        font-size: 14px;
+        padding: 12px;
+    }
+}
+        /* Для очень маленьких экранов */
+        @media screen and (max-width: 375px) {
             .hero-section h1 {
-                font-size: 2em;
+                font-size: 1.5em;
             }
 
             .hero-section p {
-                font-size: 1em;
-            }
-
-            .countdown {
-                font-size: 20px;
-            }
-
-            .btn-custom {
-                font-size: 14px;
-                padding: 8px 15px;
-            }
-
-            footer {
-                font-size: 14px;
+                font-size: 0.9em;
             }
 
             .form-container {
-                margin-top: 20px;
-                padding: 15px;
+                padding: 10px;
             }
 
             .form-container button {
-                font-size: 16px;
-                padding: 15px;
+                font-size: 14px;
+                padding: 12px;
             }
         }
     </style>
@@ -174,46 +219,49 @@
 
 <body>
 
-    <!-- Hero Section -->
-    <div class="hero-section">
-        <h1>Құрметті қонақтар!</h1>
-        <p>Сіз(дер)ді Гаухардың 70 жас мерей тойына арналған салтанатты ақ дастарханымыздың қадірлі қонағы болуға шақырамыз.</p>
-        <p><strong>Той жайлы:</strong></p>
-        <p><strong>Той иелері:</strong> Жолдасы және балалары</p>
-        <p><strong>Тойдың басталу уақыты:</strong> 18.01.2025 / сағат 14:00</p>
-        <p><strong>Тойдың мекен-жайы:</strong> Екібастұз қаласы, 40 лет Экибастуза, 52 көшесі, «Respect» мейрамханасы</p>
+    <!-- Центральный контейнер с контентом -->
+    <div class="container-center">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <h1>Құрметті қонақтар!</h1>
+            <p>Сіз(дер)ді Гаухардың 60 жас мерей тойына арналған салтанатты ақ дастарханымыздың қадірлі қонағы болуға шақырамыз.</p>
+            <p><strong>Той жайлы:</strong></p>
+            <p><strong>Той иелері:</strong> Жолдасы және балалары</p>
+            <p><strong>Тойдың басталу уақыты:</strong> 18.01.2025 / сағат 14:00</p>
+            <p><strong>Тойдың мекен-жайы:</strong> Екібастұз қаласы, 40 лет Экибастуза, 52 көшесі, «Respect» мейрамханасы</p>
 
-        <div id="timer" class="countdown"></div>
-        <a href="https://go.2gis.com/600ux" target="_blank" class="btn-custom mt-4">Карта арқылы ашу</a>
+            <div id="timer" class="countdown"></div>
+            <a href="https://go.2gis.com/600ux" target="_blank" class="btn-custom mt-4">Карта арқылы ашу</a>
+        </div>
+
+        <!-- Countdown Timer -->
+        <div class="container mt-5 text-center">
+            <h2>До начала торжества осталось:</h2>
+            <div id="timer" class="countdown"></div>
+        </div>
+
+        <!-- Guest Form -->
+        <div class="container form-container">
+            <h3>Подтвердите ваше участие:</h3>
+            <form action="submit_form.php" method="POST">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="name" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" name="email" placeholder="Ваш email" required>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" name="message" rows="4" placeholder="Дополнительные комментарии" required></textarea>
+                </div>
+                <button type="submit" class="btn-custom">Подтвердить участие</button>
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>Қуанышымыздың қадірменді қонағы болыңыздар !</p>
+        </footer>
     </div>
-
-    <!-- Countdown Timer -->
-    <div class="container mt-5 text-center">
-        <h2>До начала торжества осталось:</h2>
-        <div id="timer" class="countdown"></div>
-    </div>
-
-    <!-- Guest Form -->
-    <div class="container form-container">
-        <h3>Подтвердите ваше участие:</h3>
-        <form action="submit_form.php" method="POST">
-            <div class="form-group">
-                <input type="text" class="form-control" name="name" placeholder="Ваше имя" required>
-            </div>
-            <div class="form-group">
-                <input type="email" class="form-control" name="email" placeholder="Ваш email" required>
-            </div>
-            <div class="form-group">
-                <textarea class="form-control" name="message" rows="4" placeholder="Дополнительные комментарии" required></textarea>
-            </div>
-            <button type="submit" class="btn-custom">Подтвердить участие</button>
-        </form>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>Қуанышымыздың қадірменді қонағы болыңыздар !</p>
-    </footer>
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -243,4 +291,4 @@
     </script>
 </body>
 
-</html>
+</html> 
